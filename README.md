@@ -4,6 +4,11 @@
 ### LiquidCrystal_I2C
 ### MQTT
 
+## เปลี่ยน DataType
+```c
+int val = payload.toInt();
+```
+
 <br>
 ## Bug เชื่อม Wifi
 <img width="888" height="650" alt="image" src="https://github.com/user-attachments/assets/713ec94d-dc6a-4968-81b4-874cbc34f744" />
