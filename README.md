@@ -655,7 +655,7 @@ void loop()
 
 <br>
 
-<img width="887" height="672" alt="image" src="https://github.com/user-attachments/assets/5bb1adf7-267a-413e-b6ea-9a9ba32a4a77" />
+<img width="863" height="653" alt="image" src="https://github.com/user-attachments/assets/07266dda-426b-4c35-8cf3-e5f4a90ea745" />
 
 <br>
 
