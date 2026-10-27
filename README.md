@@ -208,6 +208,174 @@ void displayDigit(int digit) {
 
 <br>
 
+## LCD
+
+<img width="722" height="685" alt="image" src="https://github.com/user-attachments/assets/5e57f9d2-1a46-40b8-98e3-87570bf74d99" />
+
+```c
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+byte newChar1[8] = {
+  B00000,
+  B00000,
+  B10001,
+  B01010,
+  B11111,
+  B01010,
+  B10001,
+  B00000 };
+
+byte newChar2[8] = {
+  B00101,
+  B01010,
+  B11111,
+  B01010,
+  B11111,
+  B01010,
+  B10100,
+  B00000 };
+
+void setup()
+{
+  pinMode(9, INPUT_PULLUP);
+  pinMode(8, INPUT_PULLUP);
+  pinMode(7, INPUT_PULLUP);
+  pinMode(6, INPUT_PULLUP);
+  pinMode(5, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(2, OUTPUT);
+  
+  lcd.init();
+  lcd.backlight();
+  
+  lcd.createChar(1, newChar1);
+  lcd.createChar(2, newChar2);
+  
+  lcd.setCursor(1, 0);
+}
+
+void loop()
+{
+  bool keyPressed = false;
+
+  digitalWrite(5, LOW);
+  digitalWrite(4, HIGH);
+  digitalWrite(3, HIGH);
+  digitalWrite(2, HIGH);
+  
+  if (digitalRead(9) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("1");
+    keyPressed = true;
+  } else if (digitalRead(8) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("4");
+    keyPressed = true;
+  } else if (digitalRead(7) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("7");
+    keyPressed = true;
+  } else if (digitalRead(6) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.write(byte(1));
+    keyPressed = true;
+  }
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(4, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(2, HIGH);
+  
+  if (digitalRead(9) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("2");
+    keyPressed = true;
+  } else if (digitalRead(8) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("5");
+    keyPressed = true;
+  } else if (digitalRead(7) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("8");
+    keyPressed = true;
+  } else if (digitalRead(6) == LOW) {
+   	lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("0");
+    keyPressed = true;
+  }
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(3, LOW);
+  digitalWrite(2, HIGH);
+  
+  if (digitalRead(9) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("3");
+    keyPressed = true;
+  } else if (digitalRead(8) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("6");
+    keyPressed = true;
+  } else if (digitalRead(7) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("9");
+    keyPressed = true;
+  } else if (digitalRead(6) == LOW) {
+  	lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.write(byte(2));
+    keyPressed = true;
+  }
+  
+  digitalWrite(5, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(3, HIGH);
+  digitalWrite(2, LOW);
+  
+  if (digitalRead(9) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("A");
+    keyPressed = true;
+  } else if (digitalRead(8) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("B");
+    keyPressed = true;
+  } else if (digitalRead(7) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("C");
+    keyPressed = true;
+  } else if (digitalRead(6) == LOW) {
+    lcd.clear();
+  	lcd.setCursor(1, 0);
+    lcd.print("D");
+    keyPressed = true;
+  }
+  
+  if (keyPressed) {
+    delay(250);
+  }
+
+}
+```
+
+<br>
+
 ## 7Seg
 
 <img width="957" height="553" alt="image" src="https://github.com/user-attachments/assets/7346973b-2e46-43dd-9560-24bd8cf5dbef" />
