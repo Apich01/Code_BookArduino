@@ -596,10 +596,55 @@ void loop()
     lcd.print("D");
     keyPressed = true;
   }
-  
   if (keyPressed) {
     delay(250);
   }
-
 }
 ```
+
+<br>
+
+## Potentiometer
+
+<img width="950" height="421" alt="image" src="https://github.com/user-attachments/assets/67dd4499-b0a3-4a3d-aad7-f18a640c174c" />
+
+```c
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int value = analogRead(A0);
+  delay(1000);
+  Serial.println(value);
+}
+```
+
+<br>
+
+## Thermistor Sensor
+
+<img width="1272" height="575" alt="image" src="https://github.com/user-attachments/assets/958a02eb-903e-4f3e-9948-55a70f1f6873" />
+
+```c
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int value1 = analogRead(A1);
+  float r = 10000.0 * value1 / (1023.0 - value1);
+  float temp = 1.0 / (log(r / 10000.0) / 3950.0 + 1.0 / 298.15) - 273.15;
+  Serial.println(temp);
+}
+```
+
+<br>
+
+
+
+
