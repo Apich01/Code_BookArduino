@@ -4,10 +4,13 @@
 ### LiquidCrystal_I2C
 ### MQTT
 
+<br>
 ## Bug เชื่อม Wifi
 <img width="888" height="650" alt="image" src="https://github.com/user-attachments/assets/713ec94d-dc6a-4968-81b4-874cbc34f744" />
 
-
+<br>
+## สูตรแปลงค่าดิจิทัล (Raw ADC Value) ให้เป็นระดับแรงดันไฟฟ้าจริง (Voltage) ในหน่วยโวลต์ (V)
+```
 <br>
 
 ## LED
