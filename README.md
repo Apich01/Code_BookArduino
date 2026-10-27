@@ -39,6 +39,33 @@ void loop()
 }
 ```
 <br>
+## MCP9700
+```c
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  // 1. อ่านค่าอะนาล็อกจากขา A0 (ได้ค่า 0 - 1023)
+  int rawADC = analogRead(A0);
+  
+  // 2. แปลงค่า ADC ให้เป็นแรงดันไฟฟ้า (Voltage) หน่วยเป็น โวลต์ (V)
+  float voltage = rawADC * (5.0 / 1023.0);
+  
+  // 3. เข้าสูตรคำนวณหาอุณหภูมิ (°C) ของ MCP9700
+  float temperatureC = (voltage - 0.5) / 0.01;
+  
+  // แสดงผลผ่าน Serial Monitor
+  Serial.print("Temperature: ");
+  Serial.print(temperatureC);
+  Serial.println(" °C");
+  
+  delay(1000); // หน่วงเวลา 1 วินาที
+}
+
+```
+
+<br>
 
 ## FADING LED
 
