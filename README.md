@@ -76,6 +76,8 @@ void loop()
 
 ## KeyPad & 7Seg
 
+<img width="336" height="477" alt="image" src="https://github.com/user-attachments/assets/3b60cfe3-976f-4f65-a714-e9d06bf71ff1" />
+
 <img width="830" height="690" alt="image" src="https://github.com/user-attachments/assets/cd22083c-cd09-440d-bf1d-ac82e1b2a97a" />
 
 ```
